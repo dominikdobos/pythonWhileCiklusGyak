@@ -32,16 +32,16 @@ def feladat2():
     monoton = True
     while i < letszam:
         ido = int(input("Szint idő másodpercben: "))
-        if ido > elozo:
-            print("Ez az érték nagyobb, mint az előző")
-        else:
-            print("Ez az érték kisebb, mint az előző")
-            monoton = False
-        elozo = ido
         if ido < 0:
             print("Hibás!")
             i -= 1
         else:
+            if ido > elozo:
+                print("Ez az érték nagyobb, mint az előző")
+            else:
+                print("Ez az érték kisebb, mint az előző")
+                monoton = False
+            elozo = ido
             if ido != 0:
                 sikeres += 1
                 osszido += ido
